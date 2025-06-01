@@ -66,8 +66,6 @@ const Home = () => {
         <br></br>
         <br></br>
         <br></br>
-        <NuestroEquipo/>
-        <Clientes />
       <Contact
         title={ContactContent.title}
         content={ContactContent.text}
