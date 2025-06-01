@@ -5,6 +5,8 @@ import AboutContent from "../../content/AboutContent.json";
 import MissionContent from "../../content/MissionContent.json";
 import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
+import Clientes from "../../components/clientes";
+import NuestroEquipo from "../../components/nuestroEquipo";
 
 const Contact = lazy(() => import("../../components/ContactForm"));
 const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
@@ -21,7 +23,7 @@ const Home = () => {
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
-        icon="animacion1.png"
+        icon="developer.svg"
         id="intro"
       />
       <MiddleBlock
@@ -34,28 +36,44 @@ const Home = () => {
         title={AboutContent.title}
         content={AboutContent.text}
         section={AboutContent.section}
-        icon="animacion2.png"
+        icon="chica.png"
         id="about"
       />
       <ContentBlock
         direction="right"
         title={MissionContent.title}
         content={MissionContent.text}
-        icon="animacion3.png"
+        icon="cohete.png"
         id="mission"
       />
       <ContentBlock
         direction="left"
         title={ProductContent.title}
         content={ProductContent.text}
-        icon="teo.png"
+        icon="logostafftic.png"
         id="product"
       />
+      <div 
+        style={{
+          textAlign: "center",
+        }}
+      >
+        <h6>Nuestros clientes</h6>
+        <br></br>
+        <img src="../../img/svg/clientes.png" alt="Descripción" width="800" height="auto" />
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <NuestroEquipo/>
+        <Clientes />
       <Contact
         title={ContactContent.title}
         content={ContactContent.text}
         id="contact"
       />
+   
     </Container>
   );
 };
