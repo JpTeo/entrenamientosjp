@@ -53,6 +53,11 @@ const Home = () => {
         icon="logostafftic.png"
         id="product"
       />
+         <br></br>
+        <br></br>
+        <br></br>
+           <br></br>
+       
       <div 
         style={{
           textAlign: "center",
@@ -64,7 +69,31 @@ const Home = () => {
         </div>
         <br></br>
         <br></br>
-      
+           <br></br>
+        <br></br>
+        <br></br>
+           <br></br>
+        <br></br>
+        <br></br>
+          <div 
+        style={{
+          textAlign: "center",
+        }}
+      >
+        <h6>Nuestros equipos</h6>
+        <br></br>
+        <img src="../../img/svg/equipo.png" alt="Descripción" width="1000" height="auto" />
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+           <br></br>
+        <br></br>
+        <br></br>
+           <br></br>
+        <br></br>
+        <br></br>
       <Contact
         title={ContactContent.title}
         content={ContactContent.text}
