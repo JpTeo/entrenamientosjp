@@ -64,6 +64,17 @@ const Home = () => {
         </div>
         <br></br>
         <br></br>
+          <div 
+        style={{
+          textAlign: "center",
+        }}
+      >
+        <h6>Nuestros equipo</h6>
+        <br></br>
+        <img src="../../img/svg/equipo.png" alt="Descripción" width="800" height="auto" />
+        </div>
+        <br></br>
+        <br></br>
         <br></br>
         <br></br>
       <Contact
