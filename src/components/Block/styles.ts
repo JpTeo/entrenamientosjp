@@ -7,6 +7,10 @@ export const Content = styled("p")`
 export const Container = styled("div")`
   position: relative;
   max-width: 700px;
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export const TextWrapper = styled("div")`

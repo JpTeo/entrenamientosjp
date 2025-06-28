@@ -54,7 +54,7 @@ const Footer = () => {
               </DivImage>
             </NavLink>
           </Col>
-          <Col xs={24} md={12} style={{ textAlign: "right" }}>
+          <Col xs={24} md={12} style={{ textAlign: "center" }}>
             <div style={{ color: "#4E6E7E" }}>
               <Typography.Title
                 level={5}
@@ -62,20 +62,20 @@ const Footer = () => {
               >
                 Información de contacto
               </Typography.Title>
-              <Typography.Paragraph style={{ color: "#4E6E7E", margin: 0 }}>
-                Av. Cabildo 3047, timbre F. Ciudad Autónoma
+              <Typography.Paragraph style={{ color: "#4E6E7E", margin: 0, textAlign: "center" }}>
+                Ciudad Autónoma
               </Typography.Paragraph>
-              <Typography.Paragraph style={{ color: "#4E6E7E", margin: 0 }}>
+              <Typography.Paragraph style={{ color: "#4E6E7E", margin: 0, textAlign: "center" }}>
                 de Buenos Aires - Argentina
               </Typography.Paragraph>
-              <Typography.Paragraph style={{ color: "#4E6E7E", margin: 0 }}>
-                Teléfono: +5491127716208 | contacto@oma-ba.com.ar
+              <Typography.Paragraph style={{ color: "#4E6E7E", margin: 0, textAlign: "center" }}>
+                Teléfono: +5491160231604 | juanp.palacios92@gmail.com
               </Typography.Paragraph>
               <FooterContainer
                 style={{
                   display: "flex",
                   gap: "1rem",
-                  justifyContent: "flex-end",
+                  justifyContent: "center",
                   marginTop: "1rem",
                 }}
               >

@@ -34,7 +34,7 @@ export const NavLink = styled(Link)`
   }
   @media (max-width: 768px) {
     display: flex !important;
-    justify-content: end;
+    justify-content: center;
   }
 `;
 export const DivImage = styled("div")`
