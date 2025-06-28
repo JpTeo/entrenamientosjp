@@ -1,167 +1,120 @@
-import { Row, Col } from "antd";
-import { withTranslation, TFunction } from "react-i18next";
-import { SvgIcon } from "../../common/SvgIcon";
-import Container from "../../common/Container";
+"use client";
 
-import i18n from "i18next";
+import type React from "react";
+import { NavLink, Extra, FooterContainer, DivImage } from "./styles";
+import { Col, Image, Row, Typography } from "antd";
 import {
-  FooterSection,
-  Title,
-  NavLink,
-  Extra,
-  LogoContainer,
-  Para,
-  Large,
-  Chat,
-  Empty,
-  FooterContainer,
-  Language,
-  Label,
-  LanguageSwitch,
-  LanguageSwitchContainer,
-} from "./styles";
+  FacebookOutlined,
+  InstagramOutlined,
+  WhatsAppOutlined,
+} from "@ant-design/icons";
+import {
+  redirectFacebook,
+  redirectInstagram,
+  redirectWhatsApp,
+} from "../../common/utils/ContactsRedirect";
 
 interface SocialLinkProps {
-  href: string;
-  src: string;
+  icon: React.ReactElement;
+  onClick: () => void;
 }
 
-const Footer = ({ t }: { t: TFunction }) => {
-  const handleChange = (language: string) => {
-    i18n.changeLanguage(language);
-  };
-
-  const SocialLink = ({ href, src }: SocialLinkProps) => {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        key={src}
-        aria-label={src}
-      >
-        <SvgIcon src={src} width="25px" height="25px" />
-      </a>
-    );
-  };
+const Footer = () => {
+  const socialList: SocialLinkProps[] = [
+    {
+      icon: <WhatsAppOutlined style={{ fontSize: "2rem" }} />,
+      onClick: redirectWhatsApp,
+    },
+    {
+      icon: <FacebookOutlined style={{ fontSize: "2rem" }} />,
+      onClick: redirectFacebook,
+    },
+    {
+      icon: <InstagramOutlined style={{ fontSize: "2rem" }} />,
+      onClick: redirectInstagram,
+    },
+  ];
 
   return (
     <>
-      <FooterSection>
-        <Container>
-          <Row justify="space-between">
-            <Col lg={10} md={10} sm={12} xs={12}>
-              <Language>{t("Contact")}</Language>
-              <Large to="/">{t("Tell us everything")}</Large>
-              <Para>
-                {t(`Do you have any question? Feel free to reach out.`)}
-              </Para>
-              <a href="mailto:l.qqbadze@gmail.com">
-                <Chat>{t(`Let's Chat`)}</Chat>
-              </a>
-            </Col>
-            <Col lg={8} md={8} sm={12} xs={12}>
-              <Title>{t("Policy")}</Title>
-              <Large to="/">{t("Application Security")}</Large>
-              <Large to="/">{t("Software Principles")}</Large>
-            </Col>
-            <Col lg={6} md={6} sm={12} xs={12}>
-              <Empty />
-              <Large to="/">{t("Support Center")}</Large>
-              <Large to="/">{t("Customer Support")}</Large>
-            </Col>
-          </Row>
-          <Row justify="space-between">
-            <Col lg={10} md={10} sm={12} xs={12}>
-              <Empty />
-              <Language>{t("Address")}</Language>
-              <Para>Rancho Santa Margarita</Para>
-              <Para>2131 Elk Street</Para>
-              <Para>California</Para>
-            </Col>
-            <Col lg={8} md={8} sm={12} xs={12}>
-              <Title>{t("Company")}</Title>
-              <Large to="/">{t("About")}</Large>
-              <Large to="/">{t("Blog")}</Large>
-              <Large to="/">{t("Press")}</Large>
-              <Large to="/">{t("Careers & Culture")}</Large>
-            </Col>
-            <Col lg={6} md={6} sm={12} xs={12}>
-              <Label htmlFor="select-lang">{t("Language")}</Label>
-              <LanguageSwitchContainer>
-                <LanguageSwitch onClick={() => handleChange("en")}>
-                  <SvgIcon
-                    src="united-states.svg"
-                    aria-label="homepage"
-                    width="30px"
-                    height="30px"
-                  />
-                </LanguageSwitch>
-                <LanguageSwitch onClick={() => handleChange("es")}>
-                  <SvgIcon
-                    src="spain.svg"
-                    aria-label="homepage"
-                    width="30px"
-                    height="30px"
-                  />
-                </LanguageSwitch>
-              </LanguageSwitchContainer>
-            </Col>
-          </Row>
-        </Container>
-      </FooterSection>
-      <Extra>
-        <Container border={true}>
-          <Row
-            justify="space-between"
-            align="middle"
-            style={{ paddingTop: "3rem" }}
-          >
+      <Extra style={{ background: "white", padding: "2rem 4rem" }}>
+        <Row
+          gutter={[16, 16]}
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Col xs={24} md={12}>
             <NavLink to="/">
-              <LogoContainer>
-                <SvgIcon
-                  src="logo.svg"
-                  aria-label="homepage"
-                  width="101px"
-                  height="64px"
-                />
-              </LogoContainer>
+              <DivImage>
+                <Image src="/img/svg/logojp3.png" />
+              </DivImage>
             </NavLink>
-            <FooterContainer>
-              <SocialLink
-                href="https://github.com/Adrinlol/create-react-app-adrinlol"
-                src="github.svg"
-              />
-              <SocialLink
-                href="https://twitter.com/Adrinlolx"
-                src="twitter.svg"
-              />
-              <SocialLink
-                href="https://www.linkedin.com/in/lasha-kakabadze/"
-                src="linkedin.svg"
-              />
-              <SocialLink
-                href="https://medium.com/@lashakakabadze/"
-                src="medium.svg"
-              />
-              <a
-                href="https://ko-fi.com/Y8Y7H8BNJ"
-                target="_blank"
-                rel="noopener noreferrer"
+          </Col>
+          <Col xs={24} md={12} style={{ textAlign: "right" }}>
+            <div style={{ color: "#4E6E7E" }}>
+              <Typography.Title
+                level={5}
+                style={{ color: "#4E6E7E", marginBottom: "1rem" }}
               >
-                <img
-                  height="36"
-                  style={{ border: 0, height: 36 }}
-                  src="https://storage.ko-fi.com/cdn/kofi3.png?v=3"
-                  alt="Buy Me a Coffee at ko-fi.com"
-                />
-              </a>
-            </FooterContainer>
-          </Row>
-        </Container>
+                Información de contacto
+              </Typography.Title>
+              <Typography.Paragraph style={{ color: "#4E6E7E", margin: 0 }}>
+                Av. Cabildo 3047, timbre F. Ciudad Autónoma
+              </Typography.Paragraph>
+              <Typography.Paragraph style={{ color: "#4E6E7E", margin: 0 }}>
+                de Buenos Aires - Argentina
+              </Typography.Paragraph>
+              <Typography.Paragraph style={{ color: "#4E6E7E", margin: 0 }}>
+                Teléfono: +5491127716208 | contacto@oma-ba.com.ar
+              </Typography.Paragraph>
+              <FooterContainer
+                style={{
+                  display: "flex",
+                  gap: "1rem",
+                  justifyContent: "flex-end",
+                  marginTop: "1rem",
+                }}
+              >
+                {socialList.map((item, idx) => (
+                  <div
+                    key={idx}
+                    onClick={item.onClick}
+                    style={{
+                      cursor: "pointer",
+                      background: "transparent",
+                      borderRadius: "50%",
+                      width: "32px",
+                      height: "32px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {item.icon}
+                  </div>
+                ))}
+              </FooterContainer>
+            </div>
+          </Col>
+        </Row>
       </Extra>
+      <div
+        style={{
+          background: "#B2D8DD",
+          padding: "0.5rem 4rem",
+          textAlign: "right",
+        }}
+      >
+        <Typography.Text style={{ fontSize: "0.9rem" }}>
+          Creado Teo-Coop
+        </Typography.Text>
+      </div>
     </>
   );
 };
 
-export default withTranslation()(Footer);
+export default Footer;

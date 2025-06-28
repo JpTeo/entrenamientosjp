@@ -5,8 +5,8 @@ import AboutContent from "../../content/AboutContent.json";
 import MissionContent from "../../content/MissionContent.json";
 import ProductContent from "../../content/ProductContent.json";
 import ContactContent from "../../content/ContactContent.json";
-import Clientes from "../../components/clientes";
-import NuestroEquipo from "../../components/nuestroEquipo";
+import WhatsAppButton from "../../common/Button/Flotante/WhatsApp";
+
 
 const Contact = lazy(() => import("../../components/ContactForm"));
 const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
@@ -16,84 +16,49 @@ const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
 const Home = () => {
   return (
+    <>
     <Container>
+      <WhatsAppButton />
       <ScrollToTop />
+      <div style={{ marginTop: "5rem" }}>
       <ContentBlock
         direction="right"
         title={IntroContent.title}
         content={IntroContent.text}
         button={IntroContent.button}
-        icon="developer.svg"
+        icon="homejp2.png"
         id="intro"
       />
-      <MiddleBlock
-        title={MiddleBlockContent.title}
-        content={MiddleBlockContent.text}
-        button={MiddleBlockContent.button}
-      />
+      </div>
+   
       <ContentBlock
         direction="left"
         title={AboutContent.title}
         content={AboutContent.text}
         section={AboutContent.section}
-        icon="chica.png"
+        icon="jpsegunda.png"
         id="about"
+      />
+         <MiddleBlock
+        title={MiddleBlockContent.title}
+        content={MiddleBlockContent.text}
+        button={MiddleBlockContent.button}
       />
       <ContentBlock
         direction="right"
         title={MissionContent.title}
         content={MissionContent.text}
-        icon="cohete.png"
+        icon="equipojp.png"
         id="mission"
       />
       <ContentBlock
         direction="left"
         title={ProductContent.title}
         content={ProductContent.text}
-        icon="logostafftic.png"
+        icon="logojp.png"
         id="product"
       />
-         <br></br>
-        <br></br>
-        <br></br>
-           <br></br>
-       
-      <div 
-        style={{
-          textAlign: "center",
-        }}
-      >
-        <h6>Nuestros clientes</h6>
-        <br></br>
-        <img src="../../img/svg/clientes.png" alt="Descripción" width="800" height="auto" />
-        </div>
-        <br></br>
-        <br></br>
-           <br></br>
-        <br></br>
-        <br></br>
-           <br></br>
-        <br></br>
-        <br></br>
-          <div 
-        style={{
-          textAlign: "center",
-        }}
-      >
-        <h6>Nuestros equipos</h6>
-        <br></br>
-        <img src="../../img/svg/equipo.png" alt="Descripción" width="1000" height="auto" />
-        </div>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-           <br></br>
-        <br></br>
-        <br></br>
-           <br></br>
-        <br></br>
-        <br></br>
+      
       <Contact
         title={ContactContent.title}
         content={ContactContent.text}
@@ -101,6 +66,8 @@ const Home = () => {
       />
    
     </Container>
+
+        </>
   );
 };
 
