@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Content = styled("p")`
-  margin-top: 1.5rem;
+  margin-top: 0rem;
 `;
 
 export const Container = styled("div")`

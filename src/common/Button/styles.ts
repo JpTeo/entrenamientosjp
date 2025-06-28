@@ -6,7 +6,7 @@ export const StyledButton = styled("button")<{ color?: string }>`
   font-size: 1rem;
   font-weight: 700;
   width: 100%;
-  border: 1px solid #006B93;
+  border: 1px solid #0D817E;
   border-radius: 20px;
   padding: 13px 0;
   cursor: pointer;
@@ -19,7 +19,7 @@ export const StyledButton = styled("button")<{ color?: string }>`
   &:active,
   &:focus {
     color: #fff;
-    border: 1px solid #006B93;
-    background-color: #006B93;
+    border: 1px solid #0D817E;
+    background-color: #0D817E;
   }
 `;
